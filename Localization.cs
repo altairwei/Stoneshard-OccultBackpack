@@ -181,15 +181,15 @@ public class Localization
             new LocalizationSentence(
                 "magicbackpack_rumor_accept",
                 new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "Holy shit! There's such a thing as magic! Just tell me where to find someone to cast a spell on my backpack!"},
-                    {ModLanguage.Chinese, "我靠！还有这种魔法！你快告诉我去哪找谁给我的背包施施法！"}
+                    {ModLanguage.English, "There's such a thing as magic! Just tell me where to find someone to cast a spell on my backpack!"},
+                    {ModLanguage.Chinese, "还有这种魔法！你快告诉我去哪找谁给我的背包施施法！"}
                 }
             ),
             new LocalizationSentence(
                 "magicbackpack_rumor_reject",
                 new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "I don't believe any of this bullshit from you at all."},
-                    {ModLanguage.Chinese, "我根本不相信你的这些鬼扯。"}
+                    {ModLanguage.English, "I don't believe this rumor of yours at all."},
+                    {ModLanguage.Chinese, "我根本不相信你说的这些。"}
                 }
             ),
             new LocalizationSentence(
@@ -210,8 +210,8 @@ public class Localization
             new LocalizationSentence(
                 "magicbackpack_where_is_rottenwillow_pc",
                 new Dictionary<ModLanguage, string>() {
-                    {ModLanguage.English, "The Rotten Willow Tavern? What kind of a shithole is that?"},
-                    {ModLanguage.Chinese, "烂柳旅店？那是一个什么破地方？"}
+                    {ModLanguage.English, "The Rotten Willow Tavern? What kind of place is that?"},
+                    {ModLanguage.Chinese, "烂柳旅店？那是一个什么地方？"}
                 }
             ),
             new LocalizationSentence(

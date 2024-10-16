@@ -32,8 +32,9 @@ public class OccultBackpack : Mod
             isAwake: true
         );
 
-        o_container_masterpiecebackpack.ApplyEvent(ModFiles, 
-            new MslEvent("gml_Object_o_container_masterpiecebackpack_Other_10.gml", EventType.Other, 10)
+        o_container_masterpiecebackpack.ApplyEvent(ModFiles,
+            new MslEvent("gml_Object_o_container_masterpiecebackpack_Other_10.gml", EventType.Other, 10),
+            new MslEvent("gml_Object_o_container_masterpiecebackpack_Draw_0.gml", EventType.Draw, 0)
         );
 
         int index = DataLoader.data.GameObjects.IndexOf(DataLoader.data.GameObjects.First(x => x.Name.Content == "o_container_backpack"));
