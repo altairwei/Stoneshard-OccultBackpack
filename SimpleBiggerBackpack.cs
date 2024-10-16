@@ -18,6 +18,13 @@ public class SimpleBiggerBackpack : Mod
 
     public override void PatchMod()
     {
+        Msl.AddMenu(
+            "Simple Bigger Backpack",
+            new UIComponent(
+                name: "Allow the merchant in Osbrook to sell backpacks", associatedGlobal: "allow_backpack_selling",
+                UIComponentType.CheckBox, 1, true)
+        );
+
         // Make the backpack only take up 2x3 space in your inventory
         UndertaleSprite s_backpack = Msl.GetSprite("s_inv_travellersbackpack");
         s_backpack.Width = 54;
@@ -53,6 +60,10 @@ public class SimpleBiggerBackpack : Mod
             .ReplaceBy("scr_inventory_add_cells(id, cellsContainer, cellsRowSize, 5)")
             .Save();
 
+        o_container_backpack.ApplyEvent(ModFiles,
+            new MslEvent("gml_Object_o_container_backpack_Draw_0.gml", EventType.Draw, 0)
+        );
+
         // Compatibility with UI+
         Msl.LoadGML("gml_Object_o_container_backpack_Other_10")
             .MatchAll()
@@ -62,7 +73,10 @@ public class SimpleBiggerBackpack : Mod
         // Add backpacks to the goods of the Osbrook merchant
         Msl.LoadGML("gml_Object_o_npc_merchant_Create_0")
             .MatchFrom(@"scr_buying_loot(""alcohol"", ""armor"", ""medicine"", ""beverage"", ""potion"", ""jewelry"", ""food"", ""tool"", ""weapon"", ""scroll"", ""valuable"", ""junk"", ""bag"", ""treatise"", ""treasure"")")
-            .InsertAbove("ds_list_add(selling_loot_object, o_inv_backpack, 2.5)")
+            .InsertAbove(@"
+if (global.allow_backpack_selling)
+    ds_list_add(selling_loot_object, o_inv_backpack, 2.5)")
+            .Peek()
             .Save();
     }
 }
